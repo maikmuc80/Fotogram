@@ -14,6 +14,9 @@ const IMAGES = [
 ];
 
 const GALLERY = document.getElementById("gallery");
+const OVERLAY = document.getElementById("overlay");
+
+let currentIndex = 0;
 
 function init() {
   renderGallery();
@@ -40,47 +43,35 @@ function renderThumbnail(index) {
   `;
 }
 
-const OVERLAY = document.getElementById("overlay");
-let currentIndex = 0;
-
 function openOverlay(index) {
   currentIndex = index;
   OVERLAY.innerHTML = renderOverlay(currentIndex);
   OVERLAY.showModal();
 }
 
-function renderOverlay(index) {
-  const image = IMAGES[index];
-  return `
-    <header class="overlay-header">
-      <span class="overlay-title">${image.title}</span>
-      <button class="overlay-close" onclick="closeOverlay()" aria-label="Schließen">&times;</button>
-    </header>
-    <img src="assets/img/${image.file}"
-         alt="${image.title}"
-         class="overlay-image">
-  `;
-}
-
 function closeOverlay() {
   OVERLAY.close();
 }
 
+function updateOverlay() {
+  OVERLAY.innerHTML = renderOverlay(currentIndex);
+}
+
 function showNextImage() {
   currentIndex = (currentIndex + 1) % IMAGES.length;
-  OVERLAY.innerHTML = renderOverlay(currentIndex);
+  updateOverlay();
 }
 
 function showPrevImage() {
   currentIndex = (currentIndex - 1 + IMAGES.length) % IMAGES.length;
-  OVERLAY.innerHTML = renderOverlay(currentIndex);
+  updateOverlay();
 }
 
 function renderOverlay(index) {
   const image = IMAGES[index];
   return `
     <header class="overlay-header">
-      <span class="overlay-title">${image.title}</span>
+      <h2 class="overlay-title">${image.title}</h2>
       <button class="overlay-close" onclick="closeOverlay()" aria-label="Schließen">&times;</button>
     </header>
     <img src="assets/img/${image.file}"
