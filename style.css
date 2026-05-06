@@ -112,6 +112,26 @@ h1 {
   transform: scale(1.05);
 }
 
+/* ===== 5b. THUMBNAIL-BUTTONS ===== */
+.thumbnail-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: transform 0.2s ease;
+}
+
+.thumbnail-button:hover,
+.thumbnail-button:focus {
+  outline: none;
+  transform: scale(1.05);
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
 /* ===== 6. OVERLAY (Großansicht) ===== */
 .overlay {
   border: none;

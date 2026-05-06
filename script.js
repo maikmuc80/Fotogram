@@ -29,11 +29,14 @@ function renderGallery() {
 function renderThumbnail(index) {
   const image = IMAGES[index];
   return `
-    <img src="assets/img/${image.file}"
-         alt="${image.title}"
-         class="thumbnail"
-         loading="lazy"
-         onclick="openOverlay(${index})">
+    <button class="thumbnail-button"
+            onclick="openOverlay(${index})"
+            aria-label="${image.title} öffnen">
+      <img src="assets/img/${image.file}"
+           alt="${image.title}"
+           class="thumbnail"
+           loading="lazy">
+    </button>
   `;
 }
 
