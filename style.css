@@ -1,4 +1,4 @@
-/* ===== 0. Fonts ==== */
+/* ===== 0. Fonts ===== */
 /* figtree-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -21,8 +21,8 @@
   --color-bg: rgba(6, 23, 30, 1);
   --color-surface: rgba(9, 33, 42, 1);
   --color-text: rgba(255, 255, 255, 1);
-  --color-accent: #b91c1c;
-  --color-accent-hover: #dc2626;
+  --color-accent: rgba(253, 91, 79, 1);
+  --color-accent-hover: rgba(255, 255, 255, 1);
   --radius: 12px;
   --gap: 12px;
   --max-width: 1440px;
@@ -219,7 +219,7 @@ h1 {
 
 .overlay-nav:hover,
 .overlay-nav:focus {
-  background: var(--color-accent-hover);
+  background: var(--color-accent);
   outline: none;
 }
 

@@ -18,9 +18,6 @@ const OVERLAY = document.getElementById("overlay");
 
 let currentIndex = 0;
 
-function init() {
-  renderGallery();
-}
 
 function renderGallery() {
   GALLERY.innerHTML = "";
@@ -88,3 +85,5 @@ function renderOverlay(index) {
     </footer>
   `;
 }
+
+renderGallery();
