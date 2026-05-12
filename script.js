@@ -86,4 +86,10 @@ function renderOverlay(index) {
   `;
 }
 
+function handleBackdropClick(event) {
+  if (event.target === OVERLAY) {
+    closeOverlay();
+  }
+}
+
 renderGallery();
