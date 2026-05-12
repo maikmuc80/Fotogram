@@ -200,8 +200,10 @@ h1 {
   transition: background 0.2s ease;
 }
 
-.overlay-close:hover {
+.overlay-close:hover, 
+.overlay-close:focus {
   background: rgba(255, 255, 255, 0.1);
+  outline: none;
 }
 
 .overlay-image {
@@ -238,8 +240,10 @@ h1 {
 
 .overlay-nav:hover,
 .overlay-nav:focus {
-  background: var(--color-accent);
+  background: var(--color-accent-hover);
+  color: var(--color-accent);
   outline: none;
+  transform: scale(1.1);
 }
 
 .overlay-counter {
