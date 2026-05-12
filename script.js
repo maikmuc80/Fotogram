@@ -71,9 +71,11 @@ function renderOverlay(index) {
       <h2 class="overlay-title">${image.title}</h2>
       <button class="overlay-close" onclick="closeOverlay()" aria-label="Schließen">&times;</button>
     </header>
-    <img src="assets/img/${image.file}"
-         alt="${image.title}"
-         class="overlay-image">
+    <div class="overlay-image-wrapper">
+      <img src="assets/img/${image.file}"
+          alt="${image.title}"
+          class="overlay-image">
+    </div>
     <footer class="overlay-footer">
       <button class="overlay-nav overlay-prev"
               onclick="showPrevImage()"
